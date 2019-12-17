@@ -1,5 +1,5 @@
 {
-    "name" : "EVB/weather",
+    "name" : "evilbengt/weather",
     "description": "Module for weather related stuff.",
     "license": "MIT",
     "minimum-stability": "beta",
