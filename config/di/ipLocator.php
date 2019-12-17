@@ -11,7 +11,7 @@ return [
             "callback" => function () {
                 $config = $this->get("configuration");
 
-                $ipstackConfig = $config->load("ipstack");
+                $ipstackConfig = $config->load("weather");
 
                 $ipLocator = new EVB\Weather\IpLocator(
                     $ipstackConfig["items"][0]["config"]["ipstackApiKey"],
