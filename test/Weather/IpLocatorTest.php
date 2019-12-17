@@ -11,6 +11,15 @@ use PHPUnit\Framework\TestCase;
 class IpLocatorTest extends TestCase
 {
     /**
+     * Setup before each testcase
+     */
+    public function setUp()
+    {
+        $this->di = new DIFactoryConfig();
+        $this->di->loadServices(ANAX_INSTALL_PATH . "/test/config/di");
+    }
+
+    /**
      * Test getGeoInfo() method.
      * Gets info.
      */
@@ -24,7 +33,7 @@ class IpLocatorTest extends TestCase
             "zip" => "test"
         ];
 
-        $curl = new \EVB\IpValidation2\MockCurlWrapper(\json_encode($data));
+        $curl = new \EVB\Weather\MockCurlWrapper(\json_encode($data));
 
         $sut = new IpLocator("test", $curl);
 
