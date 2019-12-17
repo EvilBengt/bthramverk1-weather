@@ -1,0 +1,19 @@
+{
+    "name" : "EVB/weather",
+    "description": "Module for weather related stuff.",
+    "license": "MIT",
+    "minimum-stability": "beta",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Anax\\": "src/",
+            "EVB\\": "src/"
+        }
+    },
+    "require": {
+        "anax/anax-ramverk1-me": "^1.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    }
+}
