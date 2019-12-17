@@ -7,8 +7,15 @@
     "autoload": {
         "psr-4": {"Anax\\": "src/"}
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/EvilBengt/bthramverk1-weather"
+        }
+    ],
     "require": {
-        "anax/anax-ramverk1-me": "^1.0.0"
+        "anax/anax-ramverk1-me": "^1.0.0",
+        "evilbengt/weather": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^7"
