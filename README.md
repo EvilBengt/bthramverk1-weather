@@ -8,9 +8,9 @@ Module for weather services.
   If installed with composer, these files can be found in `[ANAX_INSTALL_PATH]/vendor/evilbengt/weather/`.
   If you have rsync installed, you may run the following commands from your anax install path to do this automatically:
 
-  * `rsync -av vendor/evilbengt/weather/src src/`
-  * `rsync -av vendor/evilbengt/weather/config config/`
-  * `rsync -av vendor/evilbengt/weather/view view/`
+  * `rsync -av vendor/evilbengt/weather/src/ src/`
+  * `rsync -av vendor/evilbengt/weather/config/ config/`
+  * `rsync -av vendor/evilbengt/weather/view/ view/`
 
 * A sample config-file can be found in `[ANAX_INSTALL_PATH]/config/weather`.
   Rename `config_sample.txt` to `config.php` and replace any `API_KEY_GOES_HERE`
