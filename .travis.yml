@@ -1,14 +1,14 @@
-language: php
+language: php´
+
+os: linux
 
 php:
   - 7.3
 
-sudo: false
-
 git:
   submodules: false
 
-before-script:
+before_script:
   - make install
 
 script:
