@@ -1,8 +1,8 @@
 <?php
 
-namespace EVB\AnaxMocks;
+namespace AnaxMocks;
 
-class MockPage extends \Anax\Page\Page
+class MockPage
 {
     public $adds = [];
 

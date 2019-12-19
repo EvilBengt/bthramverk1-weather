@@ -2,8 +2,10 @@
 
 namespace EVB\Weather;
 
-use Anax\DI\DIFactoryConfig;
+// use Anax\DI\DIFactoryConfig;
 use PHPUnit\Framework\TestCase;
+use AnaxMocks\MockDI;
+use AnaxMocks\MockPage;
 
 /**
  * Test JsonController for Weather.
@@ -11,25 +13,42 @@ use PHPUnit\Framework\TestCase;
 class JsonControllerTest extends TestCase
 {
     /**
+     * Subject under test.
+     *
+     * @var JsonController
+     */
+    private $sut;
+
+    /**
+     * DI container / Service Locator mock.
+     *
+     * @var MockDI
+     */
+    private $di;
+
+    /**
+     * Setup before each test.
+     *
+     * @return void
+     */
+    public function setUp()
+    {
+        $this->di = new MockDI();
+        $this->sut = new JsonController();
+        $this->sut->setDI($this->di);
+    }
+
+    /**
      * Test the route "doc" (GET).
      */
     public function testDocAction()
     {
-        global $di;
+        $page = new MockPage();
 
-        $di = new DIFactoryConfig();
-        $di->loadServices(ANAX_INSTALL_PATH . "/test/config/di");
+        $this->di->set("page", $page);
+        
 
-        // $di->get("cache")->setPath(ANAX_INSTALL_PATH . "/test/cache");
-
-        $di->setShared("page", "\EVB\AnaxMocks\MockPage");
-
-        $mockPage = $di->get("page");
-
-        $sut = new JsonController();
-        $sut->setDI($di);
-
-        $result = $sut->docActionGet();
+        $result = $this->sut->docActionGet();
 
         $this->assertInternalType("array", $result->args);
         $this->assertArrayHasKey("title", $result->args);
@@ -43,8 +62,6 @@ class JsonControllerTest extends TestCase
      */
     public function testRenderPage()
     {
-        $sut = new JsonController();
-
         $argSearch = [];
         $argResult = [
             [
@@ -108,7 +125,7 @@ class JsonControllerTest extends TestCase
         $argMapLink = "test";
         $argError = "";
 
-        $result = $sut->renderPage($argSearch, $argResult, $argMapLink, $argError);
+        $result = $this->sut->renderPage($argSearch, $argResult, $argMapLink, $argError);
 
         $this->assertInternalType("array", $result);
         $this->assertInternalType("array", $result[0]);
@@ -125,9 +142,7 @@ class JsonControllerTest extends TestCase
      */
     public function testRenderPageError()
     {
-        $sut = new JsonController();
-
-        $result = $sut->renderPage([], [], "test", "test");
+        $result = $this->sut->renderPage([], [], "test", "test");
 
         $this->assertInternalType("array", $result);
         $this->assertInternalType("array", $result[0]);

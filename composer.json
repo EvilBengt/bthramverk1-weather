@@ -10,10 +10,9 @@
             "EVB\\": "src/"
         }
     },
-    "require": {
-        "anax/anax-ramverk1-me": "^1.0.0"
-    },
     "require-dev": {
-        "phpunit/phpunit": "^7"
+        "phpunit/phpunit": "^7",
+        "anax/commons": "^2.0",
+        "psr/container": "^1.0"
     }
 }
