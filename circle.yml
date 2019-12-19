@@ -4,5 +4,5 @@ test:
   pre:
     make install
 
-    override:
-      make test
+  override:
+    make test
