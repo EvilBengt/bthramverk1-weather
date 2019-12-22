@@ -7,7 +7,7 @@ namespace EVB\Weather;
  */
 class MockMapGenerator
 {
-    public function MakeLink(float $latitude, float $longitude) : string
+    public function MakeLink(/** @scrutinizer ignore-unused */ float $latitude, /** @scrutinizer ignore-unused */ float $longitude) : string
     {
         return "test";
     }
