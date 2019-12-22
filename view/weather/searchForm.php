@@ -32,5 +32,5 @@ namespace Anax\View;
         title="Använder sparad väderdata för att spara på API-förfrågningar.">
         Sök med exempel-väder
     </button>
-    <a class="button" href="<?= url("weather") ?>">Rensa</a>
+    <a class="button" href="<?= /** @scrutinizer ignore-call */ url("weather") ?>">Rensa</a>
 </form>

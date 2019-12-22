@@ -25,6 +25,10 @@ class CurlWrapper
 
         \curl_close($session);
 
-        return $result ? $result : "";
+        if (!\is_string($result)) {
+            $result = "";
+        }
+
+        return $result;
     }
 }
