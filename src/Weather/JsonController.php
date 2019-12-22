@@ -48,7 +48,7 @@ class JsonController extends PageController implements ContainerInjectableInterf
 
         if ($error) {
             $response["error"] = $error;
-        } else if ($result) {
+        } else if (!empty($result)) {
             $response["map"] = $mapLink;
 
             $forecast = [];

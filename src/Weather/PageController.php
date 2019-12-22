@@ -90,7 +90,7 @@ class PageController implements ContainerInjectableInterface
             $page->add("weather/error", [
                 "error" => $error
             ]);
-        } else if ($result) {
+        } else if (!empty($result)) {
             $page->add("weather/map", [
                 "link" => $mapLink
             ]);
