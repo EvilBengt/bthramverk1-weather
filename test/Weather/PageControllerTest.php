@@ -52,7 +52,10 @@ class PageControllerTest extends TestCase
 
         $this->di->set("page", new MockPage());
         $this->di->set("request", $request);
-        $this->di->set("ipLocator", new MockIpLocator([]));
+        $this->di->set("ipLocator", new MockIpLocator([
+            "latitude" => 1,
+            "longitude" => 1
+        ]));
         $this->di->set("mapGenerator", new MockMapGenerator);
         $this->di->set("exampleWeather",
             new ExampleWeather(
@@ -82,6 +85,25 @@ class PageControllerTest extends TestCase
             )
         );
 
+
+        $res = $this->sut->indexActionGet();
+        $this->assertIsObject($res);
+    }
+
+    /**
+     * Test the route "index" (GET).
+     * With errors from Example service.
+     */
+    public function testIndexActionError()
+    {
+        $request = new MockRequest();
+        $request->setGet("search", "example");
+        $request->setGet("lat", 1);
+        $request->setGet("long", 1);
+
+        $this->di->set("page", new MockPage());
+        $this->di->set("request", $request);
+        $this->di->set("exampleWeather", new ExampleWeather("error"));
 
         $res = $this->sut->indexActionGet();
         $this->assertIsObject($res);
