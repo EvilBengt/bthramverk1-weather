@@ -6,7 +6,7 @@
 
 [![Build Status](https://scrutinizer-ci.com/g/EvilBengt/bthramverk1-weather/badges/build.png?b=master)](https://scrutinizer-ci.com/g/EvilBengt/bthramverk1-weather/build-status/master)
 
-[![Code Intelligence Status](https://scrutinizer-ci.com/g/EvilBengt/bthramverk1-weather/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+[![Code Coverage](https://scrutinizer-ci.com/g/EvilBengt/bthramverk1-weather/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/EvilBengt/bthramverk1-weather/?branch=master)
 
 Module for weather services.
 
