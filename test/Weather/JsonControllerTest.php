@@ -46,13 +46,13 @@ class JsonControllerTest extends TestCase
         $page = new MockPage();
 
         $this->di->set("page", $page);
-        
+
 
         $result = $this->sut->docActionGet();
 
-        $this->assertInternalType("array", $result->args);
+        $this->assertIsArray($result->args);
         $this->assertArrayHasKey("title", $result->args);
-        $this->assertInternalType("string", $result->args["title"]);
+        $this->assertIsString($result->args["title"]);
         $this->assertNotEmpty($result->adds);
     }
 
@@ -127,8 +127,8 @@ class JsonControllerTest extends TestCase
 
         $result = $this->sut->renderPage($argSearch, $argResult, $argMapLink, $argError);
 
-        $this->assertInternalType("array", $result);
-        $this->assertInternalType("array", $result[0]);
+        $this->assertIsArray($result);
+        $this->assertIsArray($result[0]);
         $this->assertArrayHasKey("forecast", $result[0]);
         $this->assertArrayHasKey("historical", $result[0]);
         $this->assertArrayHasKey("poweredBy", $result[0]);
@@ -144,8 +144,8 @@ class JsonControllerTest extends TestCase
     {
         $result = $this->sut->renderPage([], [], "test", "test");
 
-        $this->assertInternalType("array", $result);
-        $this->assertInternalType("array", $result[0]);
+        $this->assertIsArray($result);
+        $this->assertIsArray($result[0]);
         $this->assertArrayHasKey("error", $result[0]);
         $this->assertEquals("test", $result[0]["error"]);
     }
