@@ -2,7 +2,6 @@
 
 namespace EVB\Weather;
 
-use Anax\DI\DIFactoryConfig;
 use PHPUnit\Framework\TestCase;
 
 /**
