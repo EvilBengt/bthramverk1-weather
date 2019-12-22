@@ -1,0 +1,14 @@
+build:
+  nodes:
+    analysis:
+      tests:
+        override:
+          - php-scrutinizer-run
+          - phpcs-run
+    coverage:
+      tests:
+        override:
+          - command: make test
+            coverage:
+              file: build/coverage.clover
+              format: clover
