@@ -4,7 +4,7 @@ namespace Anax\View;
 
 ?><h2>Sök väder</h2>
 
-<form class="form" action="<?= url("weather") ?>" id="weatherForm">
+<form class="form" action="<?= /** @scrutinizer ignore-call */ url("weather") ?>" id="weatherForm">
     <p>
         Skriv in koordinater...
     </p>

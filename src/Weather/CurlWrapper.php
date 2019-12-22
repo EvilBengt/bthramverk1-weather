@@ -25,6 +25,6 @@ class CurlWrapper
 
         \curl_close($session);
 
-        return $result;
+        return $result ? $result : "";
     }
 }

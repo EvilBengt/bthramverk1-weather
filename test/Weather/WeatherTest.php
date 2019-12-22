@@ -2,7 +2,6 @@
 
 namespace EVB\Weather;
 
-use Anax\DI\DIFactoryConfig;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -22,7 +21,7 @@ class WeatherTest extends TestCase
 
         $result = $sut->getWeather("test", "test");
 
-        $this->assertInternalType("array", $result);
+        $this->assertIsArray($result);
     }
 
     /**
@@ -40,7 +39,7 @@ class WeatherTest extends TestCase
 
         $result = $sut->getWeather("test", "test");
 
-        $this->assertInternalType("string", $result);
+        $this->assertIsString($result);
     }
 
     /**
@@ -58,6 +57,6 @@ class WeatherTest extends TestCase
 
         $result = $sut->getWeather("test", "test");
 
-        $this->assertInternalType("string", $result);
+        $this->assertIsString($result);
     }
 }
