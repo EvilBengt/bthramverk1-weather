@@ -10,7 +10,7 @@ build:
           version: 7.2
       tests:
         override:
-          - command: make test
+          - command: make install test
             coverage:
               file: build/coverage.clover
               format: clover
